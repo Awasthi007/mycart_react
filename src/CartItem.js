@@ -1,4 +1,5 @@
 import React from 'react';
+import './CartItem.css';
 
 class CartItem extends React.Component {
     constructor(){
@@ -27,6 +28,16 @@ class CartItem extends React.Component {
         });
         // if previous state is requried then use the second form else use the first form
         
+    }
+
+    decreaseQty= ()=>{
+        this.setState((prevState) => {
+            if(prevState.qty > 0){
+                return {
+                    qty: prevState.qty - 1
+                }
+            }
+        })
     }
     render(){
         const {price, title, qty} = this.state;
@@ -61,6 +72,7 @@ class CartItem extends React.Component {
                             alt="decrease" 
                             className="action-icons" 
                             src="https://cdn-icons-png.flaticon.com/512/992/992683.png"
+                            onClick={this.decreaseQty}
                         />
                         <img 
                             alt="deleteflat" 
