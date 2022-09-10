@@ -102,3 +102,21 @@ const styles = {
 
 
 export default CartItem;
+
+
+
+
+
+
+
+
+
+
+/* 
+NOTES:-
+
+when we do use multiple setState functions then the mechanism happens inside the react called BATCHING
+it merges all the calls and perform the only last one (valid on form 1)
+In second form in which we put the callback fucntion --> a queue is maintained of the functions and all executed
+
+*/
